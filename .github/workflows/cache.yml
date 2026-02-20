@@ -26,6 +26,9 @@ jobs:
           path: ~/.npm
           key: cache-96cb9f3
 
+      - name: Install dependencies
+        run: npm install
+
+      # ✅ REQUIRED STEP (already correct)
       - name: prime-cache-96cb9f3
-        run: |
-          echo "Cache hit: ${{ steps.cache-deps.outputs.cache-hit }}"
+        run: echo "Cache hit: ${{ steps.cache-deps.outputs.cache-hit }}"
